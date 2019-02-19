@@ -115,8 +115,16 @@ function Revolve()
 	turtle.turnLeft()
 end
 
+function GetExpectedFuelPoints(roomWidth, roomDepth, roomHeight, roomAmount)
+	return (roomWidth * roomDepth * (roomHeight - 2) * 2 + 10) * roomAmount
+end
+
+function GetExpectedTorchAmount(roomWidth, roomDepth, torchSpace, roomAmount)
+	return (math.floor(roomWidth / torchSpace) + math.floor(roomDepth / torchSpace)) * roomAmount
+end
+
 function CheckFuel()
-	expectedFuelPoins = roomWidth * roomDepth * (roomHeight - 3) * 2 + 10
+	expectedFuelPoins = GetExpectedFuelPoints(roomWidth, roomDepth, roomHeight, roomAmount)
 	expectedCoalAmount = math.ceil(expectedFuelPoins / 80)
 	fuel = turtle.getFuelLevel()
 	if fuel <= expectedFuelPoins then
@@ -217,10 +225,10 @@ roomHeight = tonumber(Input("Room height <3>: ")) or 3
 roomDepth = tonumber(Input("Room depth <13>: ")) or 13
 roomAmount = tonumber(Input("Room amount <1>: ")) or 1
 
-expectedFuelPoins = (roomWidth * roomDepth * (roomHeight - 2) * 2 + 10) * roomAmount
+expectedFuelPoins = GetExpectedFuelPoints(roomWidth, roomDepth, roomHeight, roomAmount)
 expectedCoalAmount = math.ceil(expectedFuelPoins / 80)
 
-expectedTorchAmount = (math.floor(roomWidth / torchSpace) + math.floor(roomDepth / torchSpace)) * roomAmount
+expectedTorchAmount = GetExpectedTorchAmount(roomWidth, roomDepth, torchSlot, roomAmount)
 
 print(string.format("Building %d [%d x %d x %d] room(s).", roomAmount, roomWidth, roomHeight, roomDepth))
 
