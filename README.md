@@ -2,18 +2,18 @@
 Script for the mining turtle from Computercraft to dig out a room in any size with a corridor leading up to it.
 
 Pastebin:
-v1 https://pastebin.com/vtsfPWsJ
-v2 https://pastebin.com/9ZLHRZ2B
+* v1 https://pastebin.com/vtsfPWsJ
+* v2 https://pastebin.com/9ZLHRZ2B
 
 ## How to use it:
 paste this command into the mining turtle:
 
-v1
+* v1
 ```
 pastebin get vtsfPWsJ room
 ```
 
-v2
+* v2
 ```
 pastebin get 9ZLHRZ2B room
 ```
