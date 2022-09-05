@@ -1,5 +1,5 @@
 # Miningturtle-Room
-Script for the mining turtle from Computercraft to dig out a room in any size with a corridor leading up to it.
+Script for the mining turtle from [Computercraft](https://www.computercraft.info/) to dig out a room in any size with torches and a corridor leading up to it.
 
 Pastebin:
 * v1 https://pastebin.com/vtsfPWsJ
